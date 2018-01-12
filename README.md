@@ -27,10 +27,12 @@ When the user indicates they are currently experience a migraine, provide a pop-
 
 Back-end (Ruby on Rails):
 Database that keeps track of:
-1. users - username, first_name, password, has_many :triggers, has_many :migraines
-2. triggers - belong_to :users
+1. users - username, first_name, password, has_many :triggers, has_many :migraines, has_many :logs
+2. triggers - name, type ('one-time'/'time-duration'), belong_to :users, has_many :logs
   - should each user have their individual triggers (simple has_many belongs_to), or should triggers be their own model, so many different users can have the same trigger (many_to_many)?
-  - Each user will come up with and enter their triggers themselves. So that would point to has_many belongs_to.
+  - Do this one. No join table. Each user will come up with and enter their triggers themselves. So that would point to has_many belongs_to.
   - What if we want to recommend possible triggers that are common among other users? That would point to many_to_many.
 3. migraines - start_time, end_time, severity (number from 1 - 10, 10 being the worst), belong_to :users
   - duration is not in the db but is easily calculated in the front-end, or maybe even in the backend before sending to the frontend
+4. logs - start_time, end_time, belongs_to: users, belongs_to: triggers
+  - Where a user wants to record that they've participated in a trigger, a join entry is created that logs the start and end time (if the trigger is one-time, end_time=nil)
