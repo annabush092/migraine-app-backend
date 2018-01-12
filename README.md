@@ -1,6 +1,5 @@
 # migraine-app-backend
 
-
 Possible names:
 - Aggrivatrs
 - FoodFeels
@@ -23,7 +22,7 @@ Another feature - add some sort of sleep tracker feature, and maybe also an exer
 When the user indicates they are currently experience a migraine, provide a pop-up of some sort to tell them to go to bed.
 
 
-Back-end (Rails):
+Back-end (Ruby on Rails):
 Database that keeps track of:
 1. users - username, first_name, password, has_many :triggers, has_many :migraines
 2. triggers - belong_to :users
