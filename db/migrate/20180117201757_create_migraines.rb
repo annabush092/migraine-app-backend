@@ -4,6 +4,8 @@ class CreateMigraines < ActiveRecord::Migration[5.1]
       t.integer :severity
       t.datetime :start
 
+      t.integer :user_id
+
       t.timestamps
     end
   end

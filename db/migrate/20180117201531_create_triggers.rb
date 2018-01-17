@@ -4,6 +4,8 @@ class CreateTriggers < ActiveRecord::Migration[5.1]
       t.string :name
       t.boolean :timed
 
+      t.integer :user_id
+
       t.timestamps
     end
   end

@@ -2,14 +2,16 @@
 
 Back-end (Ruby on Rails):
 Database that keeps track of:
-1. users - username, first_name, password, has_many :triggers, has_many :migraines, has_many :logs
-2. triggers - name, timed (T/F), belong_to :users, has_many :logs
-  - should each user have their individual triggers (simple has_many belongs_to), or should triggers be their own model, so many different users can have the same trigger (many_to_many)?
-  - Do this one. No join table. Each user will come up with and enter their triggers themselves. So that would point to has_many belongs_to.
-  - What if we want to recommend possible triggers that are common among other users? That would point to many_to_many.
-3. migraines - start_time, severity (number from 1 - 10, 10 being the worst), belong_to :users
+1. users - username, first_name, password,
+has_many :triggers, has_many :migraines, has_many :logs
+2. triggers - name, timed (T/F),
+belong_to :users, has_many :logs
+  - Each user will come up with and enter their trigger types themselves. So each Trigger instance belongs to only one user.
+3. migraines - start_time, severity (number from 1 - 10, 10 being the worst),
+belong_to :users
   - duration is not in the db but is easily calculated in the front-end, or maybe even in the backend before sending to the frontend
-4. logs - start_time, end_time, belongs_to: users, belongs_to: triggers
+4. trigger_logs - start_time, end_time, (do these get covered by timestamps?)
+belongs_to: users, belongs_to: triggers
   - Where a user wants to record that they've participated in a trigger, a join entry is created that logs the start and end time (if the trigger is one-time, end_time=nil)
 
 
