@@ -1,5 +1,5 @@
 class TriggerLog < ApplicationRecord
 
-  belongs_to :triggers
-  
+  belongs_to :trigger
+
 end

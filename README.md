@@ -3,15 +3,15 @@
 Back-end (Ruby on Rails):
 Database that keeps track of:
 1. users - username, first_name, password,
-has_many :triggers, has_many :migraines, has_many :trigger_logs, through :triggers
+has_many :triggers, has_many :migraines, has_many :trigger_logs, through: :triggers
 2. triggers - name, timed (T/F),
-belongs_to :users, has_many :trigger_logs
+belongs_to :user, has_many :trigger_logs
   - Each user will come up with and enter their trigger types themselves. So each Trigger instance belongs to only one user.
 3. migraines - start_time, severity (number from 1 - 10, 10 being the worst),
-belongs_to :users
+belongs_to :user
   - duration is not in the db but is easily calculated in the front-end, or maybe even in the backend before sending to the frontend
 4. trigger_logs - start_time, end_time, (do these get covered by timestamps?)
-belongs_to :triggers
+belongs_to :trigger
   - Where a user wants to record that they've participated in a trigger, a join entry is created that logs the start and end time (if the trigger is one-time, end_time=nil)
 
 
