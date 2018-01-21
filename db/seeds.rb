@@ -6,3 +6,4 @@
 
 # Create trigger_logs
 # TriggerLog.create(trigger_id: Trigger.first.id)
+# TriggerLog.first.update(duration: (Time.now - TriggerLog.first.created_at))
