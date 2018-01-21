@@ -1,2 +1,2 @@
-class API::V1::TriggerLogsController < ApplicationController
+class Api::V1::TriggerLogsController < ApplicationController
 end

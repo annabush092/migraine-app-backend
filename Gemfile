@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # allow CORS
-gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors'
 # write custom serializers
 gem 'active_model_serializers'
 

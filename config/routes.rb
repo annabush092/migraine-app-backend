@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resource :users
-      resource :triggers
-      resource :trigger_logs
-      resource :migraines
+      resources :users, only: [:index, :show]
+      # resources :triggers
+      # resources :trigger_logs
+      # resources :migraines
     end
   end
 

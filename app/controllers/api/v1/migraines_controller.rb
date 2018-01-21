@@ -1,2 +1,2 @@
-class API::V1::MigrainesController < ApplicationController
+class Api::V1::MigrainesController < ApplicationController
 end

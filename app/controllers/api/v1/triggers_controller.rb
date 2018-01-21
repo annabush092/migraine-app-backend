@@ -1,2 +1,2 @@
-class API::V1::TriggersController < ApplicationController
+class Api::V1::TriggersController < ApplicationController
 end
