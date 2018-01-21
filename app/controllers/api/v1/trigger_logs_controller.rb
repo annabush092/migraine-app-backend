@@ -1,0 +1,2 @@
+class TriggerLogsController < ApplicationController
+end
