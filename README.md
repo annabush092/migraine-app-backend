@@ -10,12 +10,12 @@ belongs_to :user, has_many :trigger_logs
 3. migraines - start_time, severity (number from 1 - 10, 10 being the worst),
 belongs_to :user
   - duration is not in the db but is easily calculated in the front-end, or maybe even in the backend before sending to the frontend
-4. trigger_logs - duration, created_at (automatically timestamped)
+4. trigger_logs - duration, start (can't use created_at because they might indicate they had a trigger after the fact)
 belongs_to :trigger
-  - Where a user wants to record that they've participated in a trigger, a join entry is created that logs the start and end time (if the trigger is one-time, duration=0)
-  - duration can be calculated by when a user signifies a time the event has ended, and then subtracting end_time - created_at => difference in seconds, which then needs to be converted into a more normal time such as days, hours, minutes, and seconds. In duration attr, store the time difference in seconds, and then convert as needed (maybe make a method to put it into a nice string for display in the frontend)
-  - (Time.new(year, month, day, hour, minute, seconds) to create a DateTime that isn't simply Time.now.)
-  - When doing the math, make sure to have the end_time be a Time, not a DateTime. The timezone conversion will be done for you (!) so just simply subtract and boom.
+  - When a user records that they've participated in a trigger, an entry is created that logs the start and duration (if the trigger is one-time, duration=0)
+  - duration can be calculated by when a user signifies a time the event has ended, and then subtracting end_time - start => difference in seconds, which then needs to be converted into a more normal time such as days, hours, minutes, and seconds. In duration attr, store the time difference in seconds, and then convert as needed (maybe make a method to put it into a nice string for display in the frontend)
+  - //syntax: Time.new(year, month, day, hour, minute, seconds)
+  - When doing the math, make sure to have the end_time be Time, not a DateTime. The timezone conversion will be done for you (!) so just simply subtract and boom.
 
 
   Possible names:
