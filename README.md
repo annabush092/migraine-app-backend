@@ -17,6 +17,35 @@ belongs_to :trigger
   - //syntax: Time.new(year, month, day, hour, minute, seconds)
   - When doing the math, make sure to have the end_time be Time, not a DateTime. The timezone conversion will be done for you (!) so just simply subtract and boom.
 
+API schema:
+user: {
+  id: ,
+  username: ,
+  first_name: ,
+  triggers: [id: ],
+  trigger_logs: [id: ],
+  migraines: [id: ]
+}
+migraine: {
+  id: ,
+  severity: ,
+  start: ,
+  user_id:
+}
+trigger: {
+  id: ,
+  name: ,
+  timed: ,
+  user_id:
+}
+trigger_logs: {
+  id: ,
+  duration: ,
+  start: ,
+  trigger_id: ,
+  user_id:
+}
+
 
   Possible names:
   - Aggrivatrs
