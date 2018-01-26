@@ -1,6 +1,6 @@
 class Api::V1::TriggersController < ApplicationController
 
-  def show
+  def index
     @triggers = Trigger.all
     render json: @triggers
   end
