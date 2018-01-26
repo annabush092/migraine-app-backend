@@ -1,3 +1,3 @@
 class MigraineSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :severity, :start
 end

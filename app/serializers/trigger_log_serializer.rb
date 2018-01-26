@@ -1,3 +1,3 @@
 class TriggerLogSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :duration, :start, :trigger_id
 end

@@ -22,28 +22,28 @@ user: {
   id: ,
   username: ,
   first_name: ,
-  <!-- triggers: [id: ],
-  trigger_logs: [id: ],
-  migraines: [id: ] -->
-}
-migraine: {
-  id: ,
-  severity: ,
-  start: ,
-  user: {id: }
-}
-trigger: {
-  id: ,
-  name: ,
-  timed: ,
-  user: {id: }
-}
-trigger_logs: {
-  id: ,
-  duration: ,
-  start: ,
-  trigger: {id: },
-  user: {id: }
+  triggers: [
+    {
+      id: ,
+      name: ,
+      timed:
+    }
+  ],
+  trigger_logs: [
+    {
+      id: ,
+      duration: ,
+      start: ,
+      trigger_id:
+    }
+  ],
+  migraines: [
+    {
+      id: ,
+      severity: ,
+      start:
+    }
+  ]
 }
 
 
