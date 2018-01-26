@@ -30,20 +30,20 @@ migraine: {
   id: ,
   severity: ,
   start: ,
-  user_id:
+  user: {id: }
 }
 trigger: {
   id: ,
   name: ,
   timed: ,
-  user_id:
+  user: {id: }
 }
 trigger_logs: {
   id: ,
   duration: ,
   start: ,
-  trigger_id: ,
-  user_id:
+  trigger: {id: },
+  user: {id: }
 }
 
 
