@@ -22,9 +22,9 @@ user: {
   id: ,
   username: ,
   first_name: ,
-  triggers: [id: ],
+  <!-- triggers: [id: ],
   trigger_logs: [id: ],
-  migraines: [id: ]
+  migraines: [id: ] -->
 }
 migraine: {
   id: ,

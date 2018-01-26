@@ -1,8 +1,8 @@
 class Api::V1::TriggerLogsController < ApplicationController
 
-  def show
-    @trigger_log = TriggerLog.find_by(id: params[:id])
-    render json: @trigger_log
+  def index
+    @trigger_logs = TriggerLog.all
+    render json: @trigger_logs
   end
 
 end
