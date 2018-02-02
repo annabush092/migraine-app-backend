@@ -26,17 +26,17 @@ user: {
     {
       id: ,
       name: ,
-      timed:
+      timed: ,
+      trigger_logs: [
+        {
+          id: ,
+          duration: ,
+          start: ,
+        }
+      ]
     }
   ],
-  trigger_logs: [
-    {
-      id: ,
-      duration: ,
-      start: ,
-      trigger_id:
-    }
-  ],
+,
   migraines: [
     {
       id: ,
